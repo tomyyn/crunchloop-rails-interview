@@ -30,7 +30,6 @@ class TodoListItemsController < ApplicationController
 
   # PUT /todolists/:todo_list_id/todolist_items/:id
   def update
-    p params
     if @todo_list_item.update(todo_list_item_params)
       respond_to do |format|
         format.turbo_stream
