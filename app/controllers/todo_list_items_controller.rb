@@ -14,6 +14,7 @@ class TodoListItemsController < ApplicationController
     end
   end
 
+  # DELETE /todolists/:todo_list_id/todolist_items/:id
   def create
     @todo_list_item = @todo_list.todo_list_items.new(todo_list_item_params)
 
@@ -27,6 +28,7 @@ class TodoListItemsController < ApplicationController
     end
   end
 
+  # PUT /todolists/:todo_list_id/todolist_items/:id
   def update
     p params
     if @todo_list_item.update(todo_list_item_params)
