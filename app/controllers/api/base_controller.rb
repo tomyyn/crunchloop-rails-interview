@@ -7,7 +7,11 @@ module Api
     private
 
     def ensure_json_request
-      raise ActionController::RoutingError, 'JSON format required' unless request.format == :json
+      # Adding additional check for global accept as it's not correctly taking into account for ActionController::API
+      return if request.format.json? || request.accept&.include?('*/*')
+
+      raise ActionController::RoutingError,
+            'JSON format required'
     end
   end
 end
