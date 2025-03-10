@@ -1,0 +1,18 @@
+<li
+  id="<%= dom_id(todo_list_item) %>"
+  style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 600px; gap: 15px; border: 1px solid black; padding: 10px; margin-bottom: 10px; border-radius: 4px; box-sizing: border-box;"
+>
+  <%= form_with model: [todo_list_item.todo_list, todo_list_item], method: :patch, data: { turbo_stream: true }, class: "inline-form" do |f| %>
+    <div style="display: flex; align-items: center; justify-content: flex-start; margin-right: 10px;">
+      <%= f.check_box :completed, checked: todo_list_item.completed?, onchange: "this.form.requestSubmit()", 
+        style: "width: 20px; height: 20px; cursor: pointer; accent-color: #007bff;" %>
+    </div>
+  <% end %>
+  <span style="flex-grow: 1; text-align: center; font-size: 1.2rem; padding: 0 10px;"><%= todo_list_item.name %></span>
+  <div style="display: flex; align-items: center; justify-content: flex-end;">
+    <%= button_to "DELETE",
+      todo_list_todo_list_item_path(todo_list_item.todo_list, todo_list_item),
+      method: :delete, data: { turbo_stream: true }, form: { style: "display: inline;" }, class: "btn btn-danger"
+    %>
+  </div>
+</li>

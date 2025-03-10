@@ -1,0 +1,13 @@
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 15px;">
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span><strong><%= todo_list.id %>: </strong></span>
+    <span><%= todo_list.name %></span>
+  </div>
+  <div style="display: flex; gap: 15px;">
+    <%= link_to "Show", todo_list, class: "btn btn-link" %>
+    <%= link_to "Delete", todo_list, method: :delete, data: { 
+          turbo_method: :delete, 
+          confirm: "Are you sure?" 
+        }, class: "btn btn-danger" %>
+  </div>
+</div>

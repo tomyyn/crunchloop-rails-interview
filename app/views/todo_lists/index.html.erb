@@ -1,9 +1,9 @@
-<%= link_to 'Add Todo List', new_todo_list_path %>
-
-<div>
-  <% @todo_lists.each do |todo_list| %>
-    <div>
-      #<%= todo_list.id %> | <%= todo_list.name %>
-    </div>
-  <% end %>
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;">
+  <h1 class="gray-box">Todo Lists</h2>
+  <div class="gray-box" style="display: flex; flex-direction: column; align-items: center; gap: 15px; width: 600px;">
+    <%= link_to "Add Todo List", new_todo_list_path, class: "btn btn-link" %>
+    <% @todo_lists.each do |todo_list| %>
+      <%= render todo_list %>
+    <% end %>
+  </div>
 </div>

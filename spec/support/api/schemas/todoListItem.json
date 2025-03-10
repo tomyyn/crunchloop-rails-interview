@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "type": "string" },
+    "completed": { "type": "boolean" },
+    "todo_list_id": { "type": "integer" }
+  },
+  "required": ["id", "name", "completed", "todo_list_id"]
+}

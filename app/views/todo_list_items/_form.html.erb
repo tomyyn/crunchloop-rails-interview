@@ -1,0 +1,6 @@
+<%= form_with model: [todo_list, todo_list_item], id: "new_todo_list_item_form", local: false, data: { turbo_stream: true } do |f| %>
+  <div style="display: flex; gap: 10px; margin-top: 10px; justify-content: center;">
+    <%= f.text_field :name, placeholder: "New item name", required: true %>
+    <%= f.submit "Add", class: "btn btn-link" %>
+  </div>
+<% end %>

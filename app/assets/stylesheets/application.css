@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  background-color: #007bff;  
+  color: white; 
+}
+
+.gray-box {
+  background-color: #aaa;  
+  border: 1px solid #333;     
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.btn-link {
+  background-color: #dbf84d;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  background-color: #e9f4fb;
+  color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  color: white;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: #c82333;
+}
+

@@ -1,0 +1,17 @@
+AllCops:
+  NewCops: disable
+  SuggestExtensions: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Layout/LineLength:
+  Exclude:
+  - 'bin/**/*'
+  - 'spec/**/*'

@@ -1,0 +1,25 @@
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;">
+  <div>
+    <h1 class="gray-box"> <%= @todo_list.name %> </h1>
+  </div>
+  <div class="gray-box" style="display: flex; flex-direction: column; gap: 20px; width: 600px"> <!-- Increased gap -->
+    <h2> Items </h2>
+    <div>
+      <%= render partial: "todo_list_items/form", locals: { todo_list_item: TodoListItem.new, todo_list: @todo_list } %>
+    </div>
+    <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
+      <%= button_to "Complete All", complete_all_todo_list_path(@todo_list), 
+            method: :patch, 
+            data: { turbo_stream: true }, 
+            form: { style: "display: inline;" }, 
+            class: "btn btn-link" %>
+    </div>
+    <div id="todo_list_items">
+      <%= turbo_stream_from "todo_list_#{@todo_list.id}" %>
+      <% @todo_list.todo_list_items.each do |todo_list_item| %>
+          <%= render todo_list_item %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'Back', todo_lists_path, class: "btn btn-link" %>
+</div>

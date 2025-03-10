@@ -1,0 +1,15 @@
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;">
+  <h1 class= "gray-box" >New Todo List</h1>
+  <%= form_with model: @todo_list, local: true do |form| %>
+    <div class= "gray-box"  style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <div>
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control", required: true %>
+      </div>
+      <div>
+        <%= form.submit "Create Todo List", class: "btn btn-link" %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to 'Back', todo_lists_path, class: "btn btn-link" %>
+</div>

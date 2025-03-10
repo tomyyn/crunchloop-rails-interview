@@ -1,0 +1,15 @@
+<div id="notifications">
+  <% if local_assigns[:message].present? %>
+    <div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8); color: white; padding: 10px 20px;
+    border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000; display: block;">
+    <%= message %>
+  </div>
+  <% end %>
+</div>
+<script>
+  setTimeout(() => {
+    document.getElementById("notifications").style.display = "none";
+  }, 3000);
+</script>
