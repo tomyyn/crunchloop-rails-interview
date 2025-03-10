@@ -51,15 +51,3 @@
   background-color: #c82333;
   color: white;
 }
-
-.delete-button {
-  background-color: transparent;
-  border: none;
-  color: #dc3545;
-  cursor: pointer;
-}
-
-.delete-button:hover {
-  color: #c82333;
-}
-
