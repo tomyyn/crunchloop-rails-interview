@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,16 +12,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_03_05_191209) do
-  create_table "todo_list_items", force: :cascade do |t|
-    t.string "name", null: false
-    t.boolean "completed", default: false
-    t.integer "todo_list_id"
-    t.index ["todo_list_id"], name: "index_todo_list_items_on_todo_list_id"
+ActiveRecord::Schema[7.0].define(version: 20_250_305_191_209) do
+  create_table 'todo_list_items', force: :cascade do |t|
+    t.string 'name', null: false
+    t.boolean 'completed', default: false
+    t.integer 'todo_list_id'
+    t.index ['todo_list_id'], name: 'index_todo_list_items_on_todo_list_id'
   end
 
-  create_table "todo_lists", force: :cascade do |t|
-    t.string "name", null: false
+  create_table 'todo_lists', force: :cascade do |t|
+    t.string 'name', null: false
   end
-
 end

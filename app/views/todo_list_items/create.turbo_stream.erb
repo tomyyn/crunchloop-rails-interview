@@ -3,6 +3,7 @@
     <%= render partial: "todo_list_items/todo_list_item", formats: :html, locals: { todo_list_item: @todo_list_item } %>
   </turbo-frame>
 <% end %>
+
 <%= turbo_stream.replace "new_todo_list_item_form" do %>
   <%= render partial: "todo_list_items/form", locals: { todo_list_item: TodoListItem.new, todo_list: @todo_list } %>
 <% end %>
